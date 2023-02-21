@@ -14,8 +14,6 @@ class Character:
     if self.EXP > 100:
         pass
 
-
-
     def Race(self, race):
         match race:
             case "Dragonborn" | "1":
