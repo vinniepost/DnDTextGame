@@ -26,10 +26,10 @@ class Dobbelsteen:
 
 class Enemy:
     class Goblin:
-        HP = 5
-        AT = 1
+        HP = 10
+        AT = 5
         AC = 1
-        DEF = 3
+        DEF = 5
 
 
 class Hero:
@@ -59,20 +59,25 @@ class Actions:
 
     def Fight(hero, enemy):  # Currently can lose but not win? enemy wins ?
         winner = ""
+        Enemy.Goblin.HP = 5
         while (hero.HP > 0 and enemy.HP > 0):
             if hero.AT > enemy.DEF:
                 enemy.HP = enemy.HP - hero.AT
-            elif enemy.AT > hero.DEF:
+                print(f"1 Enemy HP: {enemy.HP}")
+            if enemy.AT > hero.DEF:
                 hero.HP = hero.HP - enemy.AT
-            if hero.HP <= 0:
-                winner = "Hero wins!"
-            if enemy.HP <= 0:
-                winner = "Enemy Wins :( )"
+                print("2")
+        if hero.HP >= 0:
+            winner = "Hero wins!"
+            print("3")
+        if enemy.HP >= 0:
+            winner = "Enemy Wins :( )"
+            print("4")
 
         print(winner)
 
     def Training(hero):
-        print(Dobbelsteen.D6())
+        # print(Dobbelsteen.D6())
         dobbelsteenrol = Dobbelsteen.D6()
         if dobbelsteenrol >= 1:
             hero.AT += 1
