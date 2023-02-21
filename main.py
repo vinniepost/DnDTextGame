@@ -14,6 +14,17 @@ print(
     f"Ah, There your are {heroInstance.name}.")
 heroInstance.Info()
 
+
+Actions.Fight(heroInstance, gameObjects.Enemy.Goblin)
+
+Actions.Healing(heroInstance)
+for i in range(0, 100, 1):
+    Actions.Training(heroInstance)
+
+Actions.Fight(heroInstance, gameObjects.Enemy.Goblin)
+
+
+'''
 gameLoop = True
 while gameLoop:
     print("Do you wish to \n (T) train \n (E) explore \n (H) Healing \n (Q) Quit")
@@ -37,6 +48,5 @@ while gameLoop:
                 break
             case _:
                 print("Wrong input, please try again")
-
-
+'''
 print("Thanks for playing")
